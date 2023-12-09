@@ -19,8 +19,6 @@ import java.util.Collections;
 @Getter
 @Setter
 @Entity
-@AllArgsConstructor
-@NoArgsConstructor
 public class User implements UserDetails {
 
 
@@ -28,11 +26,13 @@ public class User implements UserDetails {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long id;
-
     private String email;
-
     private String password;
     private String role;
+
+    public User() {
+
+    }
 
     public User(String email, String password, String role) {
         this.email = email;
